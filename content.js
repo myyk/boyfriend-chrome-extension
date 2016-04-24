@@ -3,6 +3,7 @@ var elements = document.getElementsByTagName('*');
 var sourceWordsToTargetWords = [
     [['bro', 'bruh', 'bruv', 'brah', 'broseph'], 'boyfriend'],
     [['bros', 'bruhs', 'bruvs', 'brahs'], 'boyfriends'],
+    [['brosephine'], 'girlfriend'],
 ];
 
 function makeRegex(sourceWords) {
