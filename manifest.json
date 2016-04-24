@@ -3,6 +3,9 @@
     "name": "Straight Boyfriend Is Like Straight Girlfriend",
     "description": "Replace mentions of bros with boyfriend",
     "version": "0.1",
+    "icons": {
+        "128": "images/icon-128.png"
+    },
     "content_scripts": [
         {
             "matches": [
