@@ -2,19 +2,29 @@ var elements = document.getElementsByTagName('*');
 
 var sourceWordsToTargetWords = [
     [['bro', 'bruh', 'bruv', 'brah', 'broseph'], 'boyfriend'],
-    [['Bro', 'Bruh', 'Bruv', 'Brah', 'Broseph'], 'Boyfriend'],
     [['bros', 'bruhs', 'bruvs', 'brahs'], 'boyfriends'],
-    [['Bros', 'Bruhs', 'Bruvs', 'Brahs'], 'Boyfriends'],
 ];
 
 function makeRegex(sourceWords) {
     return new RegExp('\\b' + sourceWords.join('\\b|\\b') + '\\b', 'g');
 };
 
-var sourceRegexToTargetWords = sourceWordsToTargetWords.map(function(sourceAndTarget) {
-    var [source,target] = sourceAndTarget;
-    return [makeRegex(source), target];
-});
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+function makeRegexToTargetWords(sourceWordsToTargetWords, capitalize) {
+    return sourceWordsToTargetWords.map(function(sourceAndTarget) {
+        var [source,target] = sourceAndTarget;
+        if (capitalize) {
+            source = source.map(capitalizeFirstLetter);
+            target = capitalizeFirstLetter(target);
+        }
+        return [makeRegex(source), target];
+    });
+};
+
+var sourceRegexToTargetWords = makeRegexToTargetWords(sourceWordsToTargetWords, true).concat(makeRegexToTargetWords(sourceWordsToTargetWords, false));
 
 function replaceTextWithRegexes(text, sourceRegexToTargetWords) {
     for (var k = 0; k < sourceRegexToTargetWords.length; k++) {
