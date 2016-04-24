@@ -1,0 +1,18 @@
+{
+"manifest_version": 2,
+    "name": "Straight Boyfriend Is Like Straight Girlfriend",
+    "description": "Replace mentions of bros with boyfriend",
+    "version": "0.1",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
