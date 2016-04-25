@@ -10,22 +10,28 @@ function makeRegex(sourceWords) {
     return new RegExp('\\b' + sourceWords.join('\\b|\\b') + '\\b', 'g');
 };
 
+function identity(string) {
+    return string;
+};
+
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-function makeRegexToTargetWords(sourceWordsToTargetWords, capitalize) {
+function toUpperCase(string) {
+    return string.toUpperCase();
+};
+
+function makeRegexToTargetWords(sourceWordsToTargetWords, modifyWords) {
     return sourceWordsToTargetWords.map(function(sourceAndTarget) {
         var [source,target] = sourceAndTarget;
-        if (capitalize) {
-            source = source.map(capitalizeFirstLetter);
-            target = capitalizeFirstLetter(target);
-        }
+        source = source.map(modifyWords);
+        target = modifyWords(target);
         return [makeRegex(source), target];
     });
 };
 
-var sourceRegexToTargetWords = makeRegexToTargetWords(sourceWordsToTargetWords, true).concat(makeRegexToTargetWords(sourceWordsToTargetWords, false));
+var sourceRegexToTargetWords = makeRegexToTargetWords(sourceWordsToTargetWords, identity).concat(makeRegexToTargetWords(sourceWordsToTargetWords, capitalizeFirstLetter)).concat(makeRegexToTargetWords(sourceWordsToTargetWords, toUpperCase));
 
 function replaceTextWithRegexes(text, sourceRegexToTargetWords) {
     for (var k = 0; k < sourceRegexToTargetWords.length; k++) {
