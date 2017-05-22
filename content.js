@@ -1,9 +1,10 @@
 var elements = document.getElementsByTagName('*');
 
 var sourceWordsToTargetWords = [
-    [['bro', 'bruh', 'bruv', 'brah', 'broseph'], 'boyfriend'],
+    [['bro', 'bruh', 'bruv', 'brah', 'broseph', 'mate'], 'boyfriend'],
     [['bros', 'bruhs', 'bruvs', 'brahs'], 'boyfriends'],
     [['brosephine'], 'girlfriend'],
+    [['babe'], 'idk your name (so I\'m going to call you something that supposedly sounds like I\'m complimenting you because I have a favour to ask)'],
 ];
 
 function makeRegex(sourceWords) {
