@@ -1,10 +1,12 @@
 var elements = document.getElementsByTagName('*');
 
 var sourceWordsToTargetWords = [
-    [['bro', 'bruh', 'bruv', 'brah', 'broseph', 'mate'], 'boyfriend'],
-    [['bros', 'bruhs', 'bruvs', 'brahs'], 'boyfriends'],
-    [['brosephine'], 'girlfriend'],
-    [['babe'], 'idk your name (so I\'m going to call you something that supposedly sounds like I\'m complimenting you because I have a favour to ask)'],
+    [['Sebastián Piñera', 'sebastián piñera', 'sebastian piñera'], 'Salchichón Piñata'],
+	[['Sebastian Piñera'], 'Sausage Piñata'],
+	[['Sebastián Piñera Echenique'], 'Salchichón Piñata Alcornoque'
+    [['Piñera', 'piñera', 'pinera'], 'Piñata'],
+    [['Presidente Piñera', 'presidente Piñera'], 'budín de hueas Piñata'],
+    [['Presidente electo Piñera', 'Presidente electo Sebastián Piñera'], 'sopapo cochino electo como presidente, Piñata'],
 ];
 
 function makeRegex(sourceWords) {
