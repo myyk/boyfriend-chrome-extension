@@ -2,12 +2,10 @@
 "manifest_version": 2,
     "name": "Salchichón Piñata",
     "description": "Tiempos Mejores",
-    "version": "0.2",
+    "version": "0.3",
     "icons": {
-		"16": "images/sausage16.png",
-		"48": "images/sausage48.png",
-        	"128": "images/sausage128.png",
-    }
+	    "128": "images/sausage128.png",
+    },
     "content_scripts": [
         {
             "matches": [
