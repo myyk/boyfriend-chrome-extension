@@ -4,10 +4,10 @@
     "description": "Tiempos Mejores",
     "version": "0.2",
     "icons": {
-	"16": "images/sausage16.png",
-	"48": "images/sausage48.png",
-        "128": "images/sausage128.png",
-    },
+		"16": "images/sausage16.png",
+		"48": "images/sausage48.png",
+        	"128": "images/sausage128.png",
+    }
     "content_scripts": [
         {
             "matches": [
