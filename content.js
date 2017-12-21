@@ -1,12 +1,15 @@
 var elements = document.getElementsByTagName('*');
 
 var sourceWordsToTargetWords = [
-    [['Sebastián Piñera', 'sebastián piñera', 'sebastian piñera'], 'Salchichón Piñata'],
+	[['Sebastián Piñera Echenique'], 'Salchichón Piñata Alcornoque'],
+	[['Sebastián Piñera', 'sebastián piñera'], 'Salchichón Piñata'],
 	[['Sebastian Piñera'], 'Sausage Piñata'],
-	[['Sebastián Piñera Echenique'], 'Salchichón Piñata Alcornoque'
-    [['Piñera', 'piñera', 'pinera'], 'Piñata'],
-    [['Presidente Piñera', 'presidente Piñera'], 'budín de hueas Piñata'],
-    [['Presidente electo Piñera', 'Presidente electo Sebastián Piñera'], 'sopapo cochino electo como presidente, Piñata'],
+	[['Piñera', 'piñera', 'pinera'], 'Piñata'],
+	[['PIÑERA', 'PIÑERA,'], 'PIÑATA'],
+	[['Presidente Piñera', 'presidente Piñera'], 'budín de hueas Piñata'],
+	[['Presidente electo Piñera', 'Presidente electo Sebastián Piñera'], 'sopapo cochino electo como presidente, Piñata'],
+	[['presidente electo', 'Presidente electo'], 'sopapo cochino electo'],
+	[['electoral'], 'intestinal'],
 ];
 
 function makeRegex(sourceWords) {
