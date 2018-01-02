@@ -1,11 +1,13 @@
 {
 "manifest_version": 2,
-    "name": "Boyfriend, please.",
-    "description": "Replace mentions of bros with boyfriend",
-    "version": "0.1.2",
-    "icons": {
-        "128": "images/icon-128.png"
-    },
+    "name": "Salchichón Piñata",
+    "description": "Tiempos Mejores",
+    "version": "0.4",
+	"icons": {
+		"16": "images/sausage16.png",
+		"48": "images/sausage48.png",
+		"128": "images/sausage128.png"
+	},
     "content_scripts": [
         {
             "matches": [
