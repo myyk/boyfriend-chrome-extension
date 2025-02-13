@@ -1,3 +1,10 @@
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.scripting.executeScript({
+        target: { allFrames: true },
+        files: ['background.js']
+    });
+});
+
 var elements = document.getElementsByTagName('*');
 
 var sourceWordsToTargetWords = [

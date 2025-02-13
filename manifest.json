@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Boyfriend, please.",
     "description": "Replace mentions of bros with boyfriend. You can view the source code here: https://github.com/myyk/boyfriend-chrome-extension/",
     "version": "1.0.0",
@@ -18,5 +18,11 @@
             "run_at": "document_end"
         }
     ],
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
 }
